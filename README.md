@@ -11,10 +11,23 @@
 
 ## 📦 Estrutura de pastas
 ```
-/src
-  /app        -> Páginas (site público + CMS)
-  /lib        -> Configurações (prisma.ts, auth.ts)
-/prisma       -> Schema e seeds
+faculdade-site/
+│── prisma/              # Esquema do banco e seeds
+│   ├── schema.prisma
+│   └── seed.ts
+│
+│── src/                 # Código principal
+│   ├── controllers/     # Lógica dos endpoints
+│   ├── routes/          # Rotas da API
+│   ├── services/        # Regras de negócio
+│   ├── middlewares/     # Middlewares de autenticação/erros
+│   └── utils/           # Funções auxiliares
+│
+│── .env                 # Variáveis de ambiente
+│── package.json
+│── tsconfig.json
+│── README.md
+
 ```
 
 ---
@@ -23,8 +36,8 @@
 
 ### 1. Clone o repositório
 ```bash
-git clone https://github.com/seu-user/nossa-faculdade.git
-cd nossa-faculdade
+git clone https://github.com/snowjhbr/faculdade-site.git
+cd faculdade-site
 ```
 
 ### 2. Instale dependências
@@ -107,26 +120,4 @@ npm run dev
 - Autenticação via **JWT em cookies HttpOnly**.  
 - Middleware protege rotas `/admin` e `/api/admin/*`.  
 
----
 
-## 🌐 Deploy sugerido
-- **Front + API:** Vercel  
-- **Banco PostgreSQL:** Railway, Neon ou Render  
-
----
-
-## ✅ Checklist do Teste
-- [x] Home Page com banner, benefícios, cursos populares e depoimentos  
-- [x] Página de listagem de cursos com busca e filtro  
-- [x] Página de detalhes do curso + botão "Comprar Agora"  
-- [x] CMS com CRUD de cursos (criar, editar, excluir)  
-- [x] Upload de imagem por URL (simples)  
-- [x] Autenticação JWT no CMS  
-- [x] Páginas adicionais: Sobre Nós, Contato, Obrigado  
-- [x] Design responsivo com TailwindCSS  
-- [x] Scripts para rodar banco, seeds e migrations  
-- [x] Código limpo, organizado e comentado onde necessário  
-
----
-
-✨ Projeto pronto para ser entregue como teste técnico.
