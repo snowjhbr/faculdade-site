@@ -1,26 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import CardCurso from '@/components/CardCurso';
 import useFadeIn from '@/hooks/useFadeIn';
 import { useRouter } from 'next/navigation';
-
-const cursosDestaque = [
-  {
-    id: '1',
-    nome: 'Sistemas de Informação',
-    descricao: 'Aprenda desenvolvimento de software, banco de dados e mais.',
-    valor: 'R$ 1.200,00',
-    imagem: '/images/si.jpg',
-  },
-  {
-    id: '2',
-    nome: 'Nutrição',
-    descricao: 'Estude alimentação saudável, dietética e nutrição clínica.',
-    valor: 'R$ 950,00',
-    imagem: '/images/nutricao.jpg',
-  },
-];
 
 const beneficios = [
   {
@@ -55,9 +38,26 @@ const depoimentos = [
   },
 ];
 
+interface Curso {
+  id: number;
+  titulo: string;
+  descricao: string;
+  preco: number;
+  imagem: string;
+}
+
 export default function HomePage() {
   useFadeIn();
   const router = useRouter();
+
+  const [cursosDestaque, setCursosDestaque] = useState<Curso[]>([]);
+
+  useEffect(() => {
+    // Buscar cursos do banco
+    fetch('/api/cursos')
+      .then(res => res.json())
+      .then(data => setCursosDestaque(data.slice(0, 2))); // pegar apenas os dois primeiros como destaque
+  }, []);
 
   return (
     <div className="max-w-7xl mx-auto py-10 px-4 space-y-20">
@@ -77,8 +77,6 @@ export default function HomePage() {
           </a>
         </div>
       </section>
-
-
 
       {/* Benefícios */}
       <section className="fade-in-up">
@@ -100,11 +98,11 @@ export default function HomePage() {
           {cursosDestaque.map((curso, index) => (
             <CardCurso
               key={curso.id}
-              id={curso.id} // agora o card sabe para qual página de detalhes navegar
+              id={String(curso.id)}
               index={index}
-              nome={curso.nome}
+              nome={curso.titulo}
               descricao={curso.descricao}
-              valor={curso.valor}
+              valor={`R$ ${curso.preco}`}
               imagem={curso.imagem}
             />
           ))}
