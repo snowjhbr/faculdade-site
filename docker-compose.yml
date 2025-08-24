@@ -1,11 +1,11 @@
+version: "3.9"
 services:
   db:
-    image: postgres:16
+    image: postgres:17
     container_name: nf_db
-    restart: unless-stopped
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: minhasenha
+      POSTGRES_PASSWORD: senhateste123
       POSTGRES_DB: nossa_faculdade
     ports:
       - "5432:5432"

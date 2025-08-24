@@ -29,11 +29,12 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
+    "prisma/**/*.ts",
     "utils/withAuth.js",
     "utils/session.js",
     "utils/refreshToken.js",
     "utils/logout.js",
     "utils/auth.js"
-  ],
+],
   "exclude": ["node_modules"]
 }

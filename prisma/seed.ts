@@ -73,8 +73,11 @@ async function main() {
       continue;
     }
 
+    // Usando upsert com chave composta nome + texto
     await prisma.depoimento.upsert({
-      where: { nome: depoimento.nome },
+      where: {
+        nome_texto: { nome: depoimento.nome, texto: depoimento.texto } // <-- chave composta do schema
+      },
       update: {},
       create: {
         nome: depoimento.nome,
