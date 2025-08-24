@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos globais */
+body {
+  @apply bg-white text-gray-900 font-sans;
+}
+
+a {
+  @apply text-primary hover:text-secondary transition-colors duration-200;
+}
+
+.btn {
+  @apply bg-primary text-white px-4 py-2 rounded-lg font-semibold transition transform hover:scale-105 hover:bg-secondary;
+}
+
+/* Animação fade-in para elementos */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.fade-in-up {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.6s ease-out;
+}
+
+.fade-in-up.opacity-100 {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Fade in para título e parágrafo do banner */
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeInDown {
+  animation: fadeInDown 1s ease-out forwards;
+}
+
+/* Bounce lento para elementos decorativos */
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-bounce-slow {
+  animation: bounceSlow 4s infinite ease-in-out;
+}

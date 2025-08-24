@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16
+    container_name: nf_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: minhasenha
+      POSTGRES_DB: nossa_faculdade
+    ports:
+      - "5432:5432"
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+
+volumes:
+  dbdata:

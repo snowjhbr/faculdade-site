@@ -1,0 +1,14 @@
+// Cria e reutiliza uma única instância do Prisma em dev (evita muitos clientes).
+import { PrismaClient } from "@prisma/client";
+
+const globalForPrisma = global as unknown as { prisma?: PrismaClient };
+
+export const prisma =
+  globalForPrisma.prisma ??
+  new PrismaClient({
+    log: ["error", "warn"], // mude para ["query"] se quiser debugar SQL
+  });
+
+if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+
+export default prisma;
