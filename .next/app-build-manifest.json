@@ -16,20 +16,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/cursos/[id]/page.js"
     ],
-    "/cursos/page": [
+    "/obrigado/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/cursos/page.js"
-    ],
-    "/admin/login/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/admin/login/page.js"
+      "static/chunks/app/obrigado/page.js"
     ],
     "/sobre/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/sobre/page.js"
+    ],
+    "/cursos/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/cursos/page.js"
     ],
     "/contato/page": [
       "static/chunks/webpack.js",
@@ -45,11 +45,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/admin/cursos/page.js"
-    ],
-    "/obrigado/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/obrigado/page.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",

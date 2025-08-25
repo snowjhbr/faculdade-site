@@ -1,11 +1,12 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/admin/page": "app/admin/page.js",
-  "/admin/cursos/page": "app/admin/cursos/page.js",
-  "/cursos/page": "app/cursos/page.js",
+  "/page": "app/page.js",
   "/cursos/[id]/page": "app/cursos/[id]/page.js",
-  "/admin/login/page": "app/admin/login/page.js",
+  "/cursos/page": "app/cursos/page.js",
+  "/contato/page": "app/contato/page.js",
+  "/admin/cursos/page": "app/admin/cursos/page.js",
+  "/api/admin/cursos/route": "app/api/admin/cursos/route.js",
   "/api/cursos/route": "app/api/cursos/route.js",
-  "/sobre/page": "app/sobre/page.js",
-  "/api/cursos/[id]/route": "app/api/cursos/[id]/route.js"
+  "/api/cursos/[id]/route": "app/api/cursos/[id]/route.js",
+  "/obrigado/page": "app/obrigado/page.js"
 }

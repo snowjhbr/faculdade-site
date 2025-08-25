@@ -24,7 +24,7 @@ model Curso {
   descricao String
   preco     Float
   categoria String
-  imagem    String
+  imagem    String?
   conteudo  String
   criadoEm  DateTime @default(now())
   atualizadoEm DateTime @updatedAt
